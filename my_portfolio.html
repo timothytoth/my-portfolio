@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Toth Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="page-header" role="banner">
+        <div class="header-content">
+            <img src="1665631016307.jpeg" alt="Headshot of Timothy Toth" class="profile-picture">
+            <div class="header-text">
+                <h1>Timothy Toth</h1>
+                <p>
+                    <span>Email:</span> <a href="mailto:tim.p.toth@pace.edu">tim.p.toth@pace.edu</a> |
+                    <span>Phone:</span> <a href="tel:+19082351463">(908) 235-1463</a>
+                </p>
+                <p>Hello! I’m Tim Toth, and I am a recent MS in Quantitative Economics graduate with a passion for big data and economics. I focus on causal inference, incentive mechanisms, and user engagement dynamics. Welcome to my personal portfolio!</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <a href="#education">Education</a>
+        <a href="#skills">Technical Skills</a>
+        <a href="#projects">Projects</a>
+    </nav>
+
+    <!-- Sections -->
+    <main>
+        <section id="education">
+            <h2>EDUCATION</h2>
+            <p>
+                Pace University, Master of Science (MS) in Quantitative Economics<br>
+                GPA: 3.8 | December 2024 | New York, NY<br><br>
+                Pace University, Bachelor of Arts (BA) in Economics<br>
+                GPA: 3.7 | May 2023 | New York, NY
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>TECHNICAL SKILLS</h2>
+            <p>
+                <b>Programming:</b> Python, R, SQL, STATA, Google BigQuery<br>
+                <b>Libraries:</b> Pandas, NumPy, Seaborn, Matplotlib, scikit-learn<br>
+                <b>Concepts:</b> Causal Inference, Econometrics, Statistical Analysis, Machine Learning, Strategic Analysis<br>
+                <b>Quantitative Methods:</b> Hypothesis Testing, Difference-in-Differences (DiD), Quasi-Poisson Two-Way Fixed Effects, Inverse Probability Weighting (IPW), Panel Data Regression, Probit and Logit Models, A/B Testing, Time Series Regression, Optimization Techniques
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>PROJECTS</h2>
+
+            <p><b>Optimal Design of Incentive Mechanisms: Badges and Their Role in Open Source Innovation</b></p>
+            <ul>
+                <li>Assessed GitHub’s Badges program on open-source innovation using a year-long panel dataset (~800k rows) of 49,000 users, employing inverse probability weighting and difference-in-differences methodology.</li>
+                <li>Identified a 7.3% monthly increase in new repository creation among badge earners post-launch.</li>
+                <li>Applied Poisson quasi-fixed-effects regression models to measure the role of specific badges on key outcomes such as repositories, issues, and pull requests.</li>
+                <li>Documented a 5.1% reduction in forking behavior among badge holders, reflecting a reallocation toward original contributions.</li>
+                <li>Proposed improvements to optimize incentives for badge design to enhance user engagement.</li>
+            </ul>
+            <p>
+        Check out my <a href="https://github.com/timothytoth/innovation_achievements" target="_blank">repository</a> along with the <a href="file:///C:/Users/Tim/OneDrive/Desktop/thesis/the_final_v100000.pdf" target="_blank">finished paper</a>.
+    </p>
+
+            <p><b>Playing to Win: Exploring the Causal Relationship Between Game Features and Positive User Feedback in the Steam Marketplace</b></p>
+            <ul>
+                <li>Analyzed 8,500 video games using weighted least squares regression to address heteroscedasticity.</li>
+                <li>Determined that games with achievements experience 34% higher positive ratings on average.</li>
+                <li>Found early access games received 40% lower ratings, reflecting developmental feedback.</li>
+                <li>Revealed that playtime and price correlate with positive user ratings.</li>
+                <li>Offered insights for developers on achievements and release timing.</li>
+            </ul>
+
+            <p><b>An Econometric Analysis on Uber Ride Behavior: A Case Study on NYC</b></p>
+            <ul>
+                <li>Evaluated congestion surcharge impacts using a refined dataset of 50,000 records from 14M Uber rides.</li>
+                <li>Observed a 0.96% reduction in shared ride adoption due to surcharges.</li>
+                <li>Found temporal patterns, including increased shared ride usage on Thursdays and evenings.</li>
+                <li>Identified trip distance and duration as significant factors for ride adoption.</li>
+            </ul>
+
+            <p><b>Data-Driven Exploration of My Spotify Listening Habits</b></p>
+            <ul>
+                <li>Utilized Python (Pandas, NumPy, Seaborn, Matplotlib, IMOTE) to analyze personal Spotify history.</li>
+                <li>Created visualizations for weekly trends and peak streaming times.</li>
+                <li>Found 65% of listening occurred during weekdays, with peak hours between 3 PM–5 PM.</li>
+            </ul>
+
+            <p><b>Identifying Significant Factors Influencing Exonerations in the United States</b></p>
+            <ul>
+                <li>Examined exonerations from 1989 to 2021 using the National Registry of Exonerations.</li>
+                <li>Determined forensic errors and perjury as major contributors, with coefficients of 1.641 and 0.933.</li>
+                <li>Resolved multicollinearity, reducing the mean VIF from 31.81 to 1.88.</li>
+                <li>Highlighted systemic flaws, including racial and gender disparities in exoneration rates.</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+
