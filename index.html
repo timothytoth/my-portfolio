@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timothy Toth - Quantitative Economics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #333;
+            background: #fafafa;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 50px;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        nav {
+            margin-top: 25px;
+        }
+        
+        nav a {
+            color: #2c5aa0;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #1a3a70;
+            text-decoration: underline;
+        }
+        
+        section {
+            margin-bottom: 70px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c5aa0;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 30px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .bio {
+            flex: 1;
+        }
+        
+        .bio p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .contact-info p {
+            margin: 5px 0;
+        }
+        
+        .contact-info a {
+            color: #2c5aa0;
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .education {
+            margin-bottom: 30px;
+        }
+        
+        .education h3 {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .education p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .paper {
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .paper:last-child {
+            border-bottom: none;
+        }
+        
+        .paper h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+        
+        .paper-meta {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+        
+        .paper p {
+            margin-bottom: 12px;
+        }
+        
+        .paper-links {
+            margin-top: 15px;
+        }
+        
+        .paper-links a {
+            color: #2c5aa0;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 0.95em;
+        }
+        
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .paper ul {
+            margin: 15px 0 15px 25px;
+        }
+        
+        .paper li {
+            margin-bottom: 8px;
+        }
+        
+        .blog-post {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: white;
+            border: 1px solid #ddd;
+            transition: box-shadow 0.3s;
+        }
+        
+        .blog-post:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .blog-post h3 {
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        
+        .blog-post h3 a {
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+        
+        .blog-post h3 a:hover {
+            color: #2c5aa0;
+        }
+        
+        .blog-date {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+        }
+        
+        .blog-excerpt {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: #2c5aa0;
+            text-decoration: none;
+            font-size: 0.95em;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #ddd;
+            color: #888;
+            font-size: 0.9em;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f9f9f9;
+            padding: 15px;
+            border-left: 3px solid #2c5aa0;
+        }
+        
+        .skill-category h4 {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #2c5aa0;
+        }
+        
+        .skill-category p {
+            font-size: 0.95em;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Timothy Toth</h1>
+            <p class="subtitle">Quantitative Economics | Incentive Design & Data</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#research">Research</a>
+                <a href="#blog">Blog</a>
+                <a href="mailto:tim.p.toth@pace.edu">Contact</a>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="profile-photo">
+                    <img src="images/profile.jpg" alt="Timothy Toth" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+                </div>
+                <div class="bio">
+                    <p>I build models that explain behavior and guide action. I use Python, R, SQL, and C to run simulations, test incentive mechanisms, and find what actually drives innovation. Data is only useful if it changes decisions. That's the standard I work by.</p>
+                </div>
+            </div>
+            
+            <div class="education">
+                <h3>Education</h3>
+                <p><strong>Master of Science in Quantitative Economics</strong><br>
+                Pace University, 2025</p>
+                
+                <p><strong>Bachelor of Arts in Economics</strong><br>
+                Pace University, 2023</p>
+            </div>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:tim.p.toth@pace.edu">tim.p.toth@pace.edu</a></p>
+                <p><strong>GitHub:</strong> <a href="https://github.com/timothytoth" target="_blank">github.com/timothytoth</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/timothy-toth/" target="_blank">linkedin.com/in/timothy-toth</a></p>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            
+            <div class="paper">
+                <h3>Optimal Design of Incentive Mechanisms: Badges and Their Role in Open Source Innovation</h3>
+                <p class="paper-meta">Thesis Paper</p>
+                <p><strong>Abstract:</strong> I study how GitHub's badges (community recognition mechanism) change open-source output. Using a panel of about 49,000 users over one year, I find that badge earners create roughly 7% more new repositories per month after launch.</p>
+                
+                <ul>
+                    <li>Use Poisson Quasi-MLE models with user and time effects to estimate badge effects on repositories, issues, and pull requests</li>
+                    <li>Find a 5.1% drop in forking for badge users, which points to a shift toward original work</li>
+                    <li>Outline simple changes to badge design that can raise engagement and innovation</li>
+                </ul>
+                
+                <p><strong>Methods:</strong> Difference-in-Differences, Inverse Probability Weighting, Poisson panel models (~800,000 observations)</p>
+                <div class="paper-links">
+                    <a href="https://raw.githubusercontent.com/timothytoth/my-portfolio/main/the_final_v100000.pdf" target="_blank">[Paper]</a>
+                    <a href="https://github.com/timothytoth/innovation_achievements" target="_blank">[Code & Data]</a>
+                </div>
+            </div>
+            
+            <div class="paper">
+                <h3>Playing to Win: Exploring the Causal Relationship Between Game Features and Positive User Feedback in the Steam Marketplace</h3>
+                <p class="paper-meta">Working Paper, 2024</p>
+                <p><strong>Abstract:</strong> I analyze about 8,500 Steam games to see which features move user ratings. Achievements are linked to roughly 34% higher positive ratings. Early access games take a hit of about 40% in ratings.</p>
+                
+                <p><strong>Key Findings:</strong> Games with achievement systems tend to have more satisfied players. Early access releases face a clear rating penalty, which shows players care about polish and state of development. Playtime and price also matter for how users respond.</p>
+                
+                <p><strong>Methods:</strong> Weighted Least Squares, Heteroscedasticity Correction, Multiple Linear Regression</p>
+            </div>
+            
+            <div class="paper">
+                <h3>An Econometric Analysis of Uber Ride Behavior: A Case Study on NYC</h3>
+                <p class="paper-meta">Research Paper</p>
+                <p><strong>Abstract:</strong> I measure how congestion surcharges affect shared rides in New York City. Using a cleaned sample of 50,000 trips drawn from 14 million rides, I find a 0.96% drop in shared ride usage after the surcharge.</p>
+                
+                <p><strong>Methods:</strong> Panel Data Regression, Fixed Effects Models, Policy Evaluation</p>
+            </div>
+            
+            <div class="paper">
+                <h3>Identifying Significant Factors Influencing Exonerations in the United States</h3>
+                <p class="paper-meta">Paper</p>
+                <p><strong>Abstract:</strong> I use data from the National Registry of Exonerations (1989–2021) to track what drives wrongful convictions. Forensic errors and perjury stand out as the main contributors. After fixing multicollinearity, mean VIF drops from 31.81 to 1.88, which makes the patterns by race and gender much clearer.</p>
+                
+                <p><strong>Methods:</strong> Logistic Regression, Multicollinearity Diagnostics, VIF Analysis</p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            
+            <div class="blog-post">
+                <h3><a href="blog_prisoners_dilemma.html">Building a Prisoner's Dilemma Game in C</a></h3>
+                <p class="blog-date">2025</p>
+                <p class="blog-excerpt">
+                    I built a playable version of the Prisoner's Dilemma in C to learn systems programming and see game theory in action. Pick a strategy and see how you perform over repeated rounds.
+                </p>
+                <a href="blog_prisoners_dilemma.html" class="read-more">View more →</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2024 Timothy Toth. All rights reserved.</p>
+            <p>Last updated: November 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
